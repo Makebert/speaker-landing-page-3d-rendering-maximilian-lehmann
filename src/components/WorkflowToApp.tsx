@@ -6,6 +6,7 @@ export default function WorkflowToApp() {
   const [isActive, setIsActive] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const hasInteractedRef = useRef<boolean>(false);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -16,16 +17,17 @@ export default function WorkflowToApp() {
 
   useEffect(() => {
     const handleScroll = () => {
+      if (hasInteractedRef.current) return; // Ignore scroll if user manually clicked the toggle
       if (!sectionRef.current) return;
       const rect = sectionRef.current.getBoundingClientRect();
-      // Activate when the switch hits the top level (e.g. ~150px from top)
-      const shouldBeActivated = rect.top <= 150;
+      // Activate when the switch hits the top level (e.g. ~250px from top for better UX)
+      const shouldBeActivated = rect.top <= 250;
       setIsActive(prev => {
         if (prev !== shouldBeActivated) return shouldBeActivated;
         return prev;
       });
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -55,7 +57,10 @@ export default function WorkflowToApp() {
           <div
             ref={sectionRef}
             className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 cursor-pointer group z-20 mt-8 md:mt-0"
-            onClick={() => setIsActive(!isActive)}
+            onClick={() => {
+              hasInteractedRef.current = true;
+              setIsActive(!isActive);
+            }}
           >
             <h2 className={`text-4xl md:text-7xl lg:text-8xl font-medium tracking-tighter transition-colors duration-500 flex-1 text-center md:text-right ${isActive ? 'text-zinc-700' : 'text-white'}`}>
               From Hierarchy
