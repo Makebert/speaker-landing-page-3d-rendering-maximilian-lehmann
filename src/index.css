@@ -18,3 +18,10 @@ body {
   background-color: #000;
   color: #fff;
 }
+/* Hide Spline Logo Fallback */
+a[href*="spline.design"] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
