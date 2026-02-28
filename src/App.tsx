@@ -24,7 +24,7 @@ export default function App() {
       {/* Spline 3D Background */}
       <div className="fixed top-0 left-0 w-[100vw] h-[100vh] z-0 pointer-events-auto">
         <spline-viewer
-          url="https://prod.spline.design/MN8DL6sBEvCBDChp/scene.splinecode"
+          url="https://prod.spline.design/JpPoEvISUjbV4S0V/scene.splinecode"
           events-target="global"
           style={{ width: '100vw', height: '100vh', display: 'block', contain: 'strict' }}
         ></spline-viewer>
