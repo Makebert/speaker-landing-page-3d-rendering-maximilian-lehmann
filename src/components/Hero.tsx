@@ -8,7 +8,7 @@ export default function Hero() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-6xl sm:text-[10vw] md:text-[8vw] leading-[0.9] font-medium tracking-tighter text-white drop-shadow-md break-words"
+            className="text-5xl sm:text-[10vw] md:text-[8vw] leading-[0.9] font-medium tracking-tighter text-white drop-shadow-md break-words"
           >
             Maximilian Lehmann
           </motion.h1>
