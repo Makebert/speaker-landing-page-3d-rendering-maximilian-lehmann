@@ -18,8 +18,8 @@ export default function WorkflowToApp() {
     const handleScroll = () => {
       if (!sectionRef.current) return;
       const rect = sectionRef.current.getBoundingClientRect();
-      // Activate when the switch comes to the top half of the screen
-      const shouldBeActivated = rect.top <= window.innerHeight * 0.45;
+      // Activate when the switch hits the top level (e.g. ~150px from top)
+      const shouldBeActivated = rect.top <= 150;
       setIsActive(prev => {
         if (prev !== shouldBeActivated) return shouldBeActivated;
         return prev;
@@ -55,8 +55,7 @@ export default function WorkflowToApp() {
           <div
             ref={sectionRef}
             className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 cursor-pointer group z-20 mt-8 md:mt-0"
-            onMouseEnter={() => setIsActive(true)}
-            onMouseLeave={() => setIsActive(false)}
+            onClick={() => setIsActive(!isActive)}
           >
             <h2 className={`text-4xl md:text-7xl lg:text-8xl font-medium tracking-tighter transition-colors duration-500 flex-1 text-center md:text-right ${isActive ? 'text-zinc-700' : 'text-white'}`}>
               From Hierarchy
@@ -82,8 +81,6 @@ export default function WorkflowToApp() {
         {/* Dynamic Visual Content Area */}
         <div
           className="mt-16 md:mt-24 relative w-full max-w-5xl mx-auto h-[550px] md:h-[600px] flex items-center justify-center"
-          onMouseEnter={() => setIsActive(true)}
-          onMouseLeave={() => setIsActive(false)}
         >
 
           {/* State 1: Scattered Workflow Cards */}
