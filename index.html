@@ -3,24 +3,63 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maximilian Lehmann | Professional Speaker</title>
+  <!-- Favicons -->
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary Meta Tags -->
+  <title>Maximilian Lehmann | Professional Speaker & Gen Z Founder</title>
+  <meta name="title" content="Maximilian Lehmann | Professional Speaker & Gen Z Founder" />
+  <meta name="description"
+    content="Master every stage of growth. Tailored keynotes and workshops designed to shift paradigms, navigate disruption, and drive impact." />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://maximilianlehmann.pro/" />
+  <meta property="og:title" content="Maximilian Lehmann | Professional Speaker & Gen Z Founder" />
+  <meta property="og:description"
+    content="Master every stage of growth. Tailored keynotes and workshops designed to shift paradigms, navigate disruption, and drive impact." />
+  <!-- TODO: User can replace this with a real social share image URL later -->
+  <meta property="og:image"
+    content="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1200&q=80" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://maximilianlehmann.pro/" />
+  <meta property="twitter:title" content="Maximilian Lehmann | Professional Speaker & Gen Z Founder" />
+  <meta property="twitter:description"
+    content="Master every stage of growth. Tailored keynotes and workshops designed to shift paradigms, navigate disruption, and drive impact." />
+  <meta property="twitter:image"
+    content="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1200&q=80" />
+
+  <!-- Performance Hints -->
+  <link rel="preconnect" href="https://prod.spline.design" />
+  <link rel="dns-prefetch" href="https://prod.spline.design" />
+
   <!-- Preload scene for faster perceived load -->
   <link rel="preload" href="https://prod.spline.design/JpPoEvISUjbV4S0V/scene.splinecode" as="fetch" crossorigin>
 
   <!-- Load Spline viewer web component -->
-  <script type="module" src="https://unpkg.com/@splinetool/viewer@latest/build/spline-viewer.js"></script>
+  <script type="module" src="/src/main.tsx"></script>
+  <style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+    }
+  </style>
 </head>
 
 <body>
   <div id="root"></div>
-  <script type="module" src="/src/main.tsx"></script>
 </body>
 
 </html>
