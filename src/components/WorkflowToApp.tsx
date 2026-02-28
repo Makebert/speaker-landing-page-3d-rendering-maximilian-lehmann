@@ -14,7 +14,7 @@ export default function WorkflowToApp() {
   ];
 
   return (
-    <section id="about" className="py-32 bg-black relative overflow-hidden border-t border-white/10">
+    <section id="about" className="py-24 md:py-32 bg-black relative overflow-hidden border-t border-white/10 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6">
 
         <div className="flex flex-col items-center text-center">
@@ -33,7 +33,7 @@ export default function WorkflowToApp() {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-            <h2 className={`text-5xl md:text-7xl lg:text-8xl font-medium tracking-tighter transition-colors duration-500 flex-1 text-right ${isHovered ? 'text-zinc-700' : 'text-white'}`}>
+            <h2 className={`text-5xl md:text-7xl lg:text-8xl font-medium tracking-tighter transition-colors duration-500 flex-1 text-center md:text-right ${isHovered ? 'text-zinc-700' : 'text-white'}`}>
               From Hierarchy
             </h2>
 
@@ -47,7 +47,7 @@ export default function WorkflowToApp() {
               />
             </div>
 
-            <h2 className={`text-5xl md:text-7xl lg:text-8xl font-medium tracking-tighter transition-colors duration-500 flex-1 text-left ${isHovered ? 'text-white' : 'text-zinc-700'}`}>
+            <h2 className={`text-5xl md:text-7xl lg:text-8xl font-medium tracking-tighter transition-colors duration-500 flex-1 text-center md:text-left ${isHovered ? 'text-white' : 'text-zinc-700'}`}>
               to Shared Agency
             </h2>
           </div>
@@ -65,7 +65,7 @@ export default function WorkflowToApp() {
           {workflowCards.map((card) => (
             <motion.div
               key={card.id}
-              className="absolute w-48 md:w-64 bg-zinc-900 border border-white/10 rounded-2xl p-4 shadow-2xl backdrop-blur-sm"
+              className="absolute w-40 md:w-64 bg-zinc-900 border border-white/10 rounded-2xl p-3 md:p-4 shadow-2xl backdrop-blur-sm hidden md:block"
               initial={false}
               animate={{
                 x: isHovered ? "0%" : card.x,

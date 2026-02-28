@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-32 bg-black relative overflow-hidden border-t border-white/10">
+    <section id="contact" className="py-24 md:py-32 bg-black relative overflow-hidden border-t border-white/10 scroll-mt-20">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-7xl font-medium tracking-tighter text-white mb-6">

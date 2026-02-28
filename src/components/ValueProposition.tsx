@@ -21,12 +21,12 @@ export default function ValueProposition() {
   ];
 
   return (
-    <section id="value" className="py-32 bg-zinc-950 relative overflow-hidden">
+    <section id="value" className="py-24 md:py-32 bg-zinc-950 relative overflow-hidden scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          
+
           {/* Text Content */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -39,10 +39,10 @@ export default function ValueProposition() {
             <p className="text-lg text-zinc-400 mb-12 max-w-xl font-light leading-relaxed">
               With over a decade of experience speaking to Fortune 500 companies, I don't just deliver speeches—I design transformative experiences that catalyze change and inspire excellence.
             </p>
-            
+
             <div className="space-y-10">
               {values.map((value, index) => (
-                <motion.div 
+                <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -63,7 +63,7 @@ export default function ValueProposition() {
           </motion.div>
 
           {/* Visual Element */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -71,13 +71,13 @@ export default function ValueProposition() {
             className="relative h-[600px] rounded-3xl overflow-hidden bg-zinc-900 border border-white/10"
           >
             <div className="absolute inset-0 bg-gradient-to-tr from-zinc-950 via-zinc-900 to-zinc-800 opacity-50"></div>
-            <img 
-              src="https://picsum.photos/seed/speakerstage/800/1200" 
-              alt="Speaker on stage" 
+            <img
+              src="https://picsum.photos/seed/speakerstage/800/1200"
+              alt="Speaker on stage"
               className="w-full h-full object-cover mix-blend-overlay opacity-80"
               referrerPolicy="no-referrer"
             />
-            
+
             {/* Decorative elements */}
             <div className="absolute inset-0 border border-white/5 rounded-3xl m-4 pointer-events-none"></div>
             <div className="absolute bottom-8 left-8 right-8 p-6 bg-black/40 backdrop-blur-md rounded-2xl border border-white/10">

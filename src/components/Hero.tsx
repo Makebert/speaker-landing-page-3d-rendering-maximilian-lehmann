@@ -8,7 +8,7 @@ export default function Hero() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-[12vw] md:text-[8vw] leading-[0.85] font-medium tracking-tighter text-white drop-shadow-md"
+            className="text-6xl sm:text-[10vw] md:text-[8vw] leading-[0.9] font-medium tracking-tighter text-white drop-shadow-md break-words"
           >
             Maximilian Lehmann
           </motion.h1>
@@ -26,7 +26,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-lg md:text-2xl text-zinc-200 font-light md:text-right"
+            className="text-base md:text-2xl text-zinc-200 font-light md:text-right leading-relaxed"
           >
             Maximilian Lehmann - Professional Speaker specializing in Future Tech, Innovation, and Leadership. Book now for your next event.
           </motion.p>

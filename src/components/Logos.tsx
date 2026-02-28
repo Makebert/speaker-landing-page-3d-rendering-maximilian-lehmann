@@ -17,11 +17,11 @@ export default function Logos() {
           Trusted by industry leaders
         </p>
 
-        <div className="flex flex-wrap justify-center gap-8 md:gap-x-16 md:gap-y-12">
+        <div className="flex flex-wrap justify-center gap-4 md:gap-x-16 md:gap-y-12">
           {logos.map((logo, index) => (
             <div
               key={index}
-              className="group flex flex-col md:flex-row items-center justify-center gap-4 text-zinc-400 hover:text-weavy-accent transition-colors duration-300"
+              className="group flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 w-[40%] sm:w-auto text-zinc-400 hover:text-weavy-accent transition-colors duration-300"
             >
               <img
                 src={`https://logo.clearbit.com/${logo.domain}`}
@@ -29,9 +29,9 @@ export default function Logos() {
                   e.currentTarget.src = `https://www.google.com/s2/favicons?sz=128&domain_url=${logo.domain}`;
                 }}
                 alt={`${logo.name} logo`}
-                className="w-8 h-8 md:w-10 md:h-10 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+                className="w-10 h-10 md:w-12 md:h-12 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 drop-shadow-md"
               />
-              <span className="text-xl md:text-2xl font-semibold tracking-tight text-center">{logo.name}</span>
+              <span className="text-sm sm:text-lg md:text-2xl font-semibold tracking-tight text-center">{logo.name}</span>
             </div>
           ))}
         </div>

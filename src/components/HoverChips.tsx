@@ -16,20 +16,20 @@ export default function HoverChips() {
   ];
 
   return (
-    <section id="formats" className="py-32 bg-[#050505] relative overflow-hidden">
+    <section id="formats" className="py-24 md:py-32 bg-[#050505] relative overflow-hidden scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16 flex flex-col items-center">
           <h2 className="text-4xl md:text-6xl font-medium tracking-tighter text-white mb-10">
             With all the professional formats you rely on
           </h2>
           {/* Interactive Chips moved under the Title */}
-          <div className="flex flex-wrap justify-center gap-4 max-w-4xl">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-4 max-w-4xl">
             {formats.map((format) => (
               <button
                 key={format.name}
                 onMouseEnter={() => setActiveChip(format.name)}
-                className={`px-6 py-3 rounded-full text-sm md:text-base font-medium transition-all duration-300 ${activeChip === format.name
-                  ? 'bg-weavy-accent text-black scale-105'
+                className={`px-4 py-2 md:px-6 md:py-3 rounded-full text-xs sm:text-sm md:text-base font-medium transition-all duration-300 ${activeChip === format.name
+                  ? 'bg-weavy-accent text-black scale-105 shadow-lg'
                   : 'bg-white/5 text-white hover:bg-white/10'
                   }`}
               >
