@@ -1,0 +1,41 @@
+export default function Logos() {
+  const logos = [
+    { name: "Mercedes-Benz", domain: "mercedes-benz.com" },
+    { name: "Tchibo", domain: "tchibo.de" },
+    { name: "Deloitte", domain: "deloitte.com" },
+    { name: "Sopra Steria", domain: "soprasteria.com" },
+    { name: "Bioscientia", domain: "bioscientia.de" },
+    { name: "Freie Universität Berlin", domain: "fu-berlin.de" },
+    { name: "Universität Hamburg", domain: "uni-hamburg.de" },
+    { name: "International School of Management", domain: "ism.de" }
+  ];
+
+  return (
+    <section className="py-24 bg-black border-t border-white/5 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+        <p className="text-center text-sm font-mono tracking-widest text-zinc-500 uppercase mb-16">
+          Trusted by industry leaders
+        </p>
+
+        <div className="flex flex-wrap justify-center gap-8 md:gap-x-16 md:gap-y-12">
+          {logos.map((logo, index) => (
+            <div
+              key={index}
+              className="group flex flex-col md:flex-row items-center justify-center gap-4 text-zinc-400 hover:text-weavy-accent transition-colors duration-300"
+            >
+              <img
+                src={`https://logo.clearbit.com/${logo.domain}`}
+                onError={(e) => {
+                  e.currentTarget.src = `https://www.google.com/s2/favicons?sz=128&domain_url=${logo.domain}`;
+                }}
+                alt={`${logo.name} logo`}
+                className="w-8 h-8 md:w-10 md:h-10 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+              />
+              <span className="text-xl md:text-2xl font-semibold tracking-tight text-center">{logo.name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -1,60 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Maximilian Lehmann | Professional Speaker</title>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles.css">
-
+    
     <!-- Preload scene for faster perceived load -->
     <link rel="preload" href="https://prod.spline.design/JpPoEvISUjbV4S0V/scene.splinecode" as="fetch" crossorigin>
-
+    
     <!-- Load Spline viewer web component -->
     <script type="module" src="https://unpkg.com/@splinetool/viewer@latest/build/spline-viewer.js"></script>
-
-    <!-- SEO Meta Tags -->
-    <meta name="description"
-        content="Maximilian Lehmann - Professional Speaker specializing in Future Tech, Innovation, and Leadership. Book now for your next event.">
-</head>
-
-<body>
-
-    <!-- Fallback/Background (will be hidden when Spline loads if supported) -->
-    <div class="spline-fallback" id="spline-fallback"></div>
-
-    <!-- Spline background wrapper (hidden until loaded) -->
-    <div class="spline-bg" id="spline-bg">
-        <spline-viewer id="spline-viewer" url="https://prod.spline.design/JpPoEvISUjbV4S0V/scene.splinecode"
-            events-target="global">
-        </spline-viewer>
-    </div>
-
-    <!-- Navigation -->
-    <nav id="navbar" class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">ML.</a>
-        </div>
-    </nav>
-
-    <!-- Main Content wrapper over 3D background -->
-    <main class="content">
-
-        <!-- Hero Section Spacer - Allows the fullscreen 3D Spline scene to shine through -->
-        <section id="hero" class="hero" aria-label="Interactive 3D Hero Scene"></section>
-
-
-    </main>
-
-    <!-- Scripts -->
-    <script src="script.js"></script>
-</body>
-
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
+
