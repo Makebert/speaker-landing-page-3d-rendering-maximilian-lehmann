@@ -5,7 +5,6 @@
 
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
-import Spline from '@splinetool/react-spline';
 
 import Navbar from './components/Navbar';
 import Logos from './components/Logos';
@@ -22,9 +21,13 @@ export default function App() {
       <Analytics />
       <SpeedInsights />
 
-      {/* Spline 3D Background Runtime */}
-      <div className="fixed inset-0 w-full h-full z-0 pointer-events-auto">
-        <Spline scene="https://prod.spline.design/MN8DL6sBEvCBDChp/scene.splinecode" />
+      {/* Spline 3D Background */}
+      <div className="fixed top-0 left-0 w-[100vw] h-[100vh] z-0 pointer-events-auto">
+        <spline-viewer
+          url="https://prod.spline.design/MN8DL6sBEvCBDChp/scene.splinecode"
+          events-target="global"
+          style={{ width: '100vw', height: '100vh', display: 'block', contain: 'strict' }}
+        ></spline-viewer>
       </div>
 
       {/* Main Content Wrapper */}
