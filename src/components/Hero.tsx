@@ -20,7 +20,7 @@ export default function Hero() {
             transition={{ delay: 0.1 }}
             className="text-[10vw] md:text-[5vw] leading-[0.9] font-medium tracking-tighter text-zinc-300 mb-8"
           >
-            Inspiring Action
+            Transforming Events
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -28,7 +28,7 @@ export default function Hero() {
             transition={{ delay: 0.2 }}
             className="text-base md:text-2xl text-zinc-200 font-light md:text-right leading-relaxed"
           >
-            Maximilian Lehmann - Professional Speaker specializing in Future Tech, Innovation, and Leadership. Book now for your next event.
+            The leading GenZ Speaker transforming corporate events through disruptive insights on future tech, fluid culture, and next-generation leadership.
           </motion.p>
         </div>
       </div>
