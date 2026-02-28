@@ -6,7 +6,11 @@ export default function Logos() {
     { name: "Sopra Steria", domain: "soprasteria.com" },
     { name: "Bioscientia", domain: "bioscientia.de" },
     { name: "Freie Universität Berlin", domain: "fu-berlin.de" },
-    { name: "Universität Hamburg", domain: "uni-hamburg.de" },
+    {
+      name: "Universität Hamburg",
+      domain: "uni-hamburg.de",
+      customUrl: "https://upload.wikimedia.org/wikipedia/commons/7/7c/UHH_Universit%C3%A4t_Hamburg_Logo_mit_Schrift_2010_Farbe_CMYK.svg"
+    },
     { name: "International School of Management", domain: "ism.de" }
   ];
 
@@ -24,9 +28,11 @@ export default function Logos() {
               className="group flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 w-[40%] sm:w-auto text-zinc-400 hover:text-weavy-accent transition-colors duration-300"
             >
               <img
-                src={`https://logo.clearbit.com/${logo.domain}`}
+                src={logo.customUrl || `https://logo.clearbit.com/${logo.domain}`}
                 onError={(e) => {
-                  e.currentTarget.src = `https://www.google.com/s2/favicons?sz=128&domain_url=${logo.domain}`;
+                  if (!logo.customUrl) {
+                    e.currentTarget.src = `https://www.google.com/s2/favicons?sz=128&domain_url=${logo.domain}`;
+                  }
                 }}
                 alt={`${logo.name} logo`}
                 className="w-10 h-10 md:w-12 md:h-12 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 drop-shadow-md"
