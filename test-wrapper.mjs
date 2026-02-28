@@ -1,0 +1,12 @@
+import puppeteer from 'puppeteer';
+const browser = await puppeteer.launch();
+const page = await browser.newPage();
+await page.goto('http://localhost:3001');
+await page.waitForSelector('#canvas3d');
+const parent = await page.evaluate(() => document.getElementById('canvas3d').parentElement.tagName);
+console.log("Parent Tag:", parent);
+const wrapperCSS = await page.evaluate(() => document.getElementById('canvas3d').parentElement.className);
+console.log("Parent Classes:", wrapperCSS);
+const canvasClasses = await page.evaluate(() => document.getElementById('canvas3d').className);
+console.log("Canvas Classes:", canvasClasses);
+await browser.close();

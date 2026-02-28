@@ -3,10 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useEffect } from 'react';
-import { Application } from '@splinetool/runtime';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
+import Spline from '@splinetool/react-spline';
 
 import Navbar from './components/Navbar';
 import Logos from './components/Logos';
@@ -17,22 +16,6 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 export default function App() {
-  useEffect(() => {
-    const initSpline = async () => {
-      const canvas = document.getElementById('canvas3d') as HTMLCanvasElement;
-      if (!canvas) return;
-
-      try {
-        const app = new Application(canvas);
-        await app.load('https://prod.spline.design/MN8DL6sBEvCBDChp/scene.splinecode');
-      } catch (error) {
-        console.error("Failed to load Spline scene:", error);
-      }
-    };
-
-    initSpline();
-  }, []);
-
   return (
     <div className="relative min-h-screen text-white font-sans selection:bg-weavy-accent selection:text-black">
       {/* Vercel Metrics */}
@@ -40,7 +23,9 @@ export default function App() {
       <SpeedInsights />
 
       {/* Spline 3D Background Runtime */}
-      <canvas id="canvas3d" className="fixed inset-0 w-full h-full z-0 pointer-events-auto outline-none" />
+      <div className="fixed inset-0 w-full h-full z-0 pointer-events-auto">
+        <Spline scene="https://prod.spline.design/MN8DL6sBEvCBDChp/scene.splinecode" />
+      </div>
 
       {/* Main Content Wrapper */}
       <div className="relative z-10 pointer-events-none">
