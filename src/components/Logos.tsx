@@ -9,7 +9,7 @@ export default function Logos() {
     {
       name: "Universität Hamburg",
       domain: "uni-hamburg.de",
-      customUrl: "https://upload.wikimedia.org/wikipedia/commons/7/7c/UHH_Universit%C3%A4t_Hamburg_Logo_mit_Schrift_2010_Farbe_CMYK.svg"
+      customUrl: "https://upload.wikimedia.org/wikipedia/commons/9/98/UHH_Universit%C3%A4t_Hamburg_Logo.svg"
     },
     { name: "International School of Management", domain: "ism.de" }
   ];
